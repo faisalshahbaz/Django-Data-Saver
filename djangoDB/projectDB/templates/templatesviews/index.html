@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{#{% load staticfiles %}#}
+
+{% block head %}
+
+{#    <link rel="stylesheet" href="//assets/stylesheets/bootstrap.min.css" />#}
+{#    <link rel="stylesheet" href="//assets/stylesheets/bootstrap-responsive.min.css" />#}
+{#    <link rel="stylesheet" href="//assets/stylesheets/application.css" />#}
+{##}
+{#    <script src="//assets/javascripts/jquery-1.9.1.js"></script>#}
+{#    <script src="//assets/javascripts/calculator.js"></script>#}
+{% endblock %}
+
+
+{% block body %}
+
+  <div class="container text-center">
+
+    <h1>Profile</h1>
+      <br/>
+      <br/>
+
+
+     <form action="" method="post">
+         {% csrf_token %}
+    <label for="name">Your name: </label>
+    <input id="name" type="text" name="name" value="{{ current_name }}">
+         <br/>
+      <br/>
+          <label for="city">Your City: </label>
+    <input id="city" type="text" name="city" value="{{ current_name }}">
+         <br/>
+      <br/>
+          <label for="country">Your Country: </label>
+    <input id="country" type="text" name="country" value="{{ current_name }}">
+         <br/>
+      <br/>
+          <label for="phoneno">Your Phone: </label>
+    <input id="phoneno" type="text" name="phoneno" value="{{ current_name }}">
+           <br/>
+      <br/>
+    <button type="submit">Save</button>
+    </form>
+
+      <br/>
+      <br/>
+{#       <h3>Result:  {{ text }}</h3>#}
+  
+  <br/>
+      <br/>
+
+      {% for post in posts %}
+          <pr>{{ post.name }}</pr>
+          <pr>{{ post.city }}</pr>
+          <pr>{{ post.country }}</pr>
+          <pr>{{ post.phoneno }}</pr>
+           <br/>
+      {% endfor %}
+<ui>
+{#     {% for post in posts %}#}
+{#          <li>#}
+{#          {% if post.post == 'Sehar' %}#}
+{#          {{post.post}}#}
+{#              {% else %}#}
+{#               {{post.post}} posted by {{ post.user.get_full_name }} on {{post.date}}#}
+{#          {% endif %}#}
+{##}
+{##}
+{#         </li>#}
+{#          {% endfor %}#}
+
+</ui>
+
+          
+
+
+
+    </div>
+
+
+
+{% endblock %}
